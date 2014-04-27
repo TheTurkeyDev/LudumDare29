@@ -8,10 +8,12 @@ public class MainScreen extends Screen
 {
 	private Image mainImage = new Image(Image.getImage("/Images/MainScreen.png"));
 	private Button start = new Button(250, 300, 275, 75, new Image(Image.getImage("/Images/StartSelected.png")) , new Image(Image.getImage("/Images/StartUnSelected.png")), "Start Button");
+	private Button settings = new Button(250, 400, 275, 75, new Image(Image.getImage("/Images/SettingsSelected.png")) , new Image(Image.getImage("/Images/SettingsUnSelected.png")), "Settings Button");
 	public MainScreen(String n)
 	{
 		super(n);
 		super.addInteractable(start);
+		super.addInteractable(settings);
 	}
 	
 	public void render()

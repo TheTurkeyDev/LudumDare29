@@ -11,10 +11,12 @@ public class GameOverScreen extends Screen
 	private Image loseImage = new Image(Image.getImage("/Images/GameOverScreen.png"));
 	private Image winImage = new Image(Image.getImage("/Images/GameWinScreen.png"));
 	private Button restart = new Button(250, 300, 275, 75, new Image(Image.getImage("/Images/ReStartSelected.png")) , new Image(Image.getImage("/Images/ReStartUnSelected.png")), "Restart Button");
+	private Button mainMenu = new Button(250, 400, 275, 75, new Image(Image.getImage("/Images/MainSelected.png")) , new Image(Image.getImage("/Images/MainUnSelected.png")), "MainMenu Button");
 	public GameOverScreen(String n)
 	{
 		super(n);
 		addInteractable(restart);
+		addInteractable(mainMenu);
 	}
 
 	public void render()
@@ -40,6 +42,10 @@ public class GameOverScreen extends Screen
 		{
 			((GameScreen)ScreenManager.getInstance().getScreen("Game")).load();
 			ScreenManager.getInstance().setCurrentScreen("Game");
+		}
+		if(i.getName().equalsIgnoreCase("MainMenu Button"))
+		{
+			ScreenManager.getInstance().setCurrentScreen("Main");
 		}
 	}
 	
