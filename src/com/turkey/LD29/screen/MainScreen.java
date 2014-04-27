@@ -36,5 +36,9 @@ public class MainScreen extends Screen
 			ScreenManager.getInstance().setCurrentScreen("Game");
 			((GameScreen)ScreenManager.getInstance().getScreen("Game")).load();
 		}
+		else if(i.getName().equalsIgnoreCase("Settings Button"))
+		{
+			ScreenManager.getInstance().setCurrentScreen("Settings");
+		}
 	}
 }

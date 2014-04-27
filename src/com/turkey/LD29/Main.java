@@ -16,6 +16,7 @@ import com.turkey.LD29.screen.GameOverScreen;
 import com.turkey.LD29.screen.GameScreen;
 import com.turkey.LD29.screen.MainScreen;
 import com.turkey.LD29.screen.ScreenManager;
+import com.turkey.LD29.screen.SettingsScreen;
 
 
 public class Main extends JPanel implements Runnable
@@ -67,6 +68,7 @@ public class Main extends JPanel implements Runnable
 		sm.addScreen(new MainScreen("Main"));
 		sm.addScreen(new GameScreen("Game"));
 		sm.addScreen(new GameOverScreen("GameOver"));
+		sm.addScreen(new SettingsScreen("Settings"));
 		
 		sm.setCurrentScreen("Main");
 	}

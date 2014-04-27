@@ -17,6 +17,7 @@ public class GameScreen extends Screen
 	private int[][] map;
 
 	private int clicked = 0;
+	private int clicks = 30;
 
 	private boolean isLoaded = false;
 	private int stage = 1;
@@ -66,6 +67,7 @@ public class GameScreen extends Screen
 		}
 		if(!solver.solve(new Location(1, 1), new Location(maze.getXSize() -2, maze.getYSize() - 2)))
 		load();
+		clicks = ((SettingsScreen)ScreenManager.getInstance().getScreen("Settings")).getNumClicks();
 		isLoaded = true;
 	}
 
@@ -133,7 +135,7 @@ public class GameScreen extends Screen
 
 	public void onClicked(Interactable i)
 	{
-		if(clicked <= 30)
+		if(clicked < clicks)
 		{
 			i.hide();
 			Interactable i2 = getInteractable(new Location(i.getX(), i.getY() - maze.getyWallScale()));			
